@@ -11,15 +11,11 @@ import java.util.logging.Logger;
 
 public final class MythicAddon extends JavaPlugin implements Listener {
 
-    private Logger logger;
 
     @Override
     public void onEnable() {
         // Plugin startup logic
-
         Log.info("MythicDrop startup-ing");
-        //
-
     }
 
     @Override
@@ -29,9 +25,10 @@ public final class MythicAddon extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onMythicDropLoad(MythicDropLoadEvent event) {
+        Log.info("MythicMechanicLoadEvent called for mechanic " + event.getDropName());
         if (event.getDropName().equalsIgnoreCase("slimefun")) {
             event.register(new DropSlimefunItem(event.getConfig(), event.getArgument()));
-            Log.info("-- Registered DropSlimefunItem drop!");
+            Log.info("-- Registered slimefun drop!");
         }
     }
 }
