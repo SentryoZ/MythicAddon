@@ -30,6 +30,10 @@ public class DropSlimefunItem implements IItemDrop {
 
     }
 
+    public BukkitItemStack getDrop_item() {
+        return new BukkitItemStack(this.drop_item);
+    }
+
     @Override
     public AbstractItemStack getDrop(DropMetadata dropMetadata, double v) {
         return new BukkitItemStack(this.drop_item);
