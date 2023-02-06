@@ -1,17 +1,12 @@
 package me.sntrz.mythicaddon.Drop;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.lumine.mythic.api.adapters.AbstractEntity;
 import io.lumine.mythic.api.adapters.AbstractItemStack;
-import io.lumine.mythic.api.adapters.AbstractWorld;
 import io.lumine.mythic.api.config.MythicLineConfig;
 import io.lumine.mythic.api.drops.DropMetadata;
 import io.lumine.mythic.api.drops.IItemDrop;
 import io.lumine.mythic.bukkit.adapters.BukkitItemStack;
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.World;
 import org.bukkit.inventory.ItemStack;
 
 
