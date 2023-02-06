@@ -30,7 +30,7 @@ public final class MythicAddon extends JavaPlugin implements Listener {
     public void onMythicDropLoad(MythicDropLoadEvent event) {
         Log.info("MythicDropLoadEvent called for drop " + event.getDropName());
 
-        if (event.getDropName().equalsIgnoreCase("slimefun")) {
+        if (event.getDropName().equalsIgnoreCase("SLIMEFUN")) {
             String line = event.getConfig().getLine();
             MythicLineConfig config = event.getConfig();
 
