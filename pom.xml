@@ -6,7 +6,7 @@
 
     <groupId>me.sntrz</groupId>
     <artifactId>mythic-addon</artifactId>
-    <version>1.0.1.143006022023</version>
+    <version>1.0.1.144006022023</version>
     <packaging>jar</packaging>
 
     <name>MythicAddon</name>

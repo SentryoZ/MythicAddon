@@ -7,8 +7,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.logging.Logger;
-
 public final class MythicAddon extends JavaPlugin implements Listener {
 
 
@@ -16,6 +14,7 @@ public final class MythicAddon extends JavaPlugin implements Listener {
     public void onEnable() {
         // Plugin startup logic
         Log.info("MythicDrop startup-ing");
+
     }
 
     @Override
@@ -25,7 +24,7 @@ public final class MythicAddon extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onMythicDropLoad(MythicDropLoadEvent event) {
-        Log.info("MythicMechanicLoadEvent called for mechanic " + event.getDropName());
+        Log.info("MythicDropLoadEvent called for drop " + event.getDropName());
         if (event.getDropName().equalsIgnoreCase("slimefun")) {
             event.register(new DropSlimefunItem(event.getConfig(), event.getArgument()));
             Log.info("-- Registered slimefun drop!");
