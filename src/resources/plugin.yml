@@ -1,5 +1,5 @@
-name: Mythic Addon
+name: MythicAddon
 version: '${project.version}'
 main: me.sntrz.mythicaddon.MythicAddon
 api-version: 1.19
-depend: [ Slimefun, Mythicmobs ]
+depend: [ Slimefun, MythicMobs ]

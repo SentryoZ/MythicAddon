@@ -7,8 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
-
-public final class MythicDrop extends JavaPlugin implements Listener {
+public final class MythicAddon extends JavaPlugin implements Listener {
 
     private Logger log;
     @Override

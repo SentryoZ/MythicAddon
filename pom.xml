@@ -6,10 +6,10 @@
 
     <groupId>me.sntrz</groupId>
     <artifactId>mythic-addon</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Mythic Addon</name>
+    <name>MythicAddon</name>
 
     <properties>
         <java.version>1.8</java.version>
