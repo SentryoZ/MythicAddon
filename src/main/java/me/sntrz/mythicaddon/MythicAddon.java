@@ -1,6 +1,7 @@
 package me.sntrz.mythicaddon;
 
 import io.lumine.mythic.bukkit.events.MythicDropLoadEvent;
+import io.lumine.mythic.bukkit.utils.logging.Log;
 import me.sntrz.mythicaddon.Drop.DropSlimefunItem;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -8,13 +9,15 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
 
-public final class MythicDrop extends JavaPlugin implements Listener {
+public final class MythicAddon extends JavaPlugin implements Listener {
 
-    private Logger log;
+    private Logger logger;
+
     @Override
     public void onEnable() {
         // Plugin startup logic
-            log.info("MythicDrop startup-ing");
+
+        Log.info("MythicDrop startup-ing");
         //
 
     }
@@ -25,10 +28,10 @@ public final class MythicDrop extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onMythicDropLoad(MythicDropLoadEvent event)	{
-        if(event.getDropName().equalsIgnoreCase("slimefun"))	{
+    public void onMythicDropLoad(MythicDropLoadEvent event) {
+        if (event.getDropName().equalsIgnoreCase("slimefun")) {
             event.register(new DropSlimefunItem(event.getConfig(), event.getArgument()));
-            log.info("-- Registered DropSlimefunItem drop!");
+            Log.info("-- Registered DropSlimefunItem drop!");
         }
     }
 }
