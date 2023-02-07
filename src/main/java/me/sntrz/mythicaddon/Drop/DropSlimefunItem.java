@@ -7,7 +7,6 @@ import io.lumine.mythic.api.drops.DropMetadata;
 import io.lumine.mythic.api.drops.IItemDrop;
 import io.lumine.mythic.bukkit.adapters.BukkitItemStack;
 import io.lumine.mythic.bukkit.utils.logging.Log;
-import io.lumine.mythic.core.drops.droppables.ItemDrop;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -15,18 +14,12 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class DropSlimefunItem implements IItemDrop {
 
-    ItemStack drop_item = new ItemStack(Material.AIR);
+    ItemStack drop_item = null;
 
     public void prepareItem(String item_id, Integer quantity) {
         SlimefunItem slime_item = SlimefunItem.getById(item_id);
-        Log.info(item_id);
-        if (slime_item == null) {
-            Log.info("Item = null");
-        } else {
-            Log.info("Item != null");
-        }
         if (slime_item != null) {
-            this.drop_item = slime_item.getItem();
+            this.drop_item = slime_item.getItem().clone();
             this.drop_item.setAmount(quantity);
         }
     }
@@ -39,9 +32,8 @@ public class DropSlimefunItem implements IItemDrop {
 
     @Override
     public AbstractItemStack getDrop(DropMetadata dropMetadata, double v) {
-        ItemMeta meta = this.drop_item.getItemMeta();
-        if (meta != null && meta.hasDisplayName()) {
-            Log.info(meta.getDisplayName());
+        if (this.drop_item == null) {
+            this.drop_item = new ItemStack(Material.STONE);
         }
         return new BukkitItemStack(this.drop_item);
     }

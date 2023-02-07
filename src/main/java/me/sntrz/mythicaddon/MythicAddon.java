@@ -30,11 +30,8 @@ public final class MythicAddon extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onMythicDropLoad(MythicDropLoadEvent event) {
-        Log.info("MythicDropLoadEvent called for drop " + event.getDropName());
-
-        if(event.getDropName().equalsIgnoreCase("slimefun"))	{
+        if (event.getDropName().equalsIgnoreCase("slimefun")) {
             event.register(new DropSlimefunItem(event.getConfig(), event.getArgument()));
-            Log.info("-- Registered DropSlimefunItem drop!");
         }
     }
 }
