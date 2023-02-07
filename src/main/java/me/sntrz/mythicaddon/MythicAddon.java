@@ -1,12 +1,7 @@
 package me.sntrz.mythicaddon;
 
-import io.lumine.mythic.api.config.MythicLineConfig;
-import io.lumine.mythic.api.drops.IDrop;
-import io.lumine.mythic.bukkit.adapters.BukkitItemStack;
 import io.lumine.mythic.bukkit.events.MythicDropLoadEvent;
 import io.lumine.mythic.bukkit.utils.logging.Log;
-import io.lumine.mythic.core.drops.droppables.CustomDrop;
-import io.lumine.mythic.core.drops.droppables.ItemDrop;
 import me.sntrz.mythicaddon.Drop.DropSlimefunItem;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
