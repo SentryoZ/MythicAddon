@@ -20,13 +20,15 @@ public class DropSlimefunItem implements IItemDrop {
         SlimefunItem slime_item = SlimefunItem.getById(item_id);
         if (slime_item != null) {
             this.drop_item = slime_item.getItem().clone();
-            this.drop_item.setAmount(quantity);
+
+//            this.drop_item.setAmount(quantity);
         }
     }
 
     public DropSlimefunItem(MythicLineConfig config, String argument) {
         String item_id = config.getString(new String[]{"id", "i"}, "COPPER_DUST", argument);
         Integer quantity = config.getInteger(new String[]{"amount", "a"}, 0);
+
         prepareItem(item_id.toUpperCase(), quantity);
     }
 
@@ -35,6 +37,8 @@ public class DropSlimefunItem implements IItemDrop {
         if (this.drop_item == null) {
             this.drop_item = new ItemStack(Material.STONE);
         }
+        this.drop_item.setAmount((int) dropMetadata.getAmount());
+
         return new BukkitItemStack(this.drop_item);
     }
 }
